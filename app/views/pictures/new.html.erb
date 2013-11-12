@@ -1,15 +1,16 @@
 <h1>Add A New Picture</h1>
 
-<form action="http://localhost:3000/create_picture">
+<%= form_tag(new_picture_url, :method => "post") do %>
+
   <div>
     <label for="the_caption">Caption:</label>
-    <input id="the_caption" type="text" name="caption">
+    <%= text_field_tag :source %>
   </div>
   <div>
     <label for="image_url">Image URL:</label>
-    <input id="image_url" type="text" name="source">
+    <%= text_field_tag :source %>
   </div>
   <div>
     <input type="submit" value="Create Picture">
   </div>
-</form> 
+<% end %>

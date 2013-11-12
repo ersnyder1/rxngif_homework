@@ -16,12 +16,14 @@ class PicturesController < ApplicationController
 	@picture.caption = params[:caption]
 	@picture.source = params[:source]
 	@picture.save
+  redirect_to posts_url
   end
 
   def destroy
   	@id = params[:id]
   	@pic_to_delete = Picture.find(@id)
   	@pic_to_delete.destroy
+    redirect_to pictures_url
   end
 
 def edit
@@ -37,12 +39,8 @@ def update
 @p.caption= params[:caption] 
 @p.source= params[:source]
 @p.save
+redirect_to picture_url(pic.id)
 end
-
-
-
-
-
 
 
 end
